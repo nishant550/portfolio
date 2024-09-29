@@ -1,0 +1,244 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+
+
+
+
+
+
+{% block content  %}
+    <div class=" portfolio-container">
+        <ul class="navlist">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Project</a></li>
+            <li><a href="#">Service</a></li>
+        </ul>
+        <div class="left-container">
+            <div class="icons">
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+                <i class="fa-brands fa-codepen"></i>
+            </div>
+            <div class="content ">
+                <h2>Hi! I am <span style="color: #5db9ee;">Nishant Verma</span></h2>
+                <h1>Web Developer.</h1>
+                <p style="margin: 1.1rem 0 3rem 0;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eius, eligendi <br> obcaecati voluptates accusamus cumque repudiandae labore, quam fuga <br> repellendus inventore qui dolor, id quas nesciunt  voluptatum.</p>
+                <div class="button">
+                    <button class=" btn btn-outline-primary">Hire me</button>
+                    <button class=" btn btn-outline-warning" style="margin-left: 1rem;">View project</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="right-container"></div>
+            <div class="design">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+{% endblock  %}
+
+
+
+
+
+
+
+{% block css %}
+    <style>
+        .content h1::before{
+            content: attr();
+            overflow: hidden;
+            overflow: hidden;
+            display: inline-block;
+            animation: effectText 1s linear infinite alternate;
+        }
+        .navlist li a::after,.navlist .active::after{
+            content: "";
+            position: absolute;
+            background: #fff;
+            width: 100%;
+            height: .1rem;
+            left: 0;
+            bottom: -5px;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform .5s;
+        }
+        .navlist li a:hover::after,.navlist .active::after{
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .design .circle{
+            aspect-ratio: 1;
+            position: absolute;
+            border-radius: 50%;
+            top: 50%;
+            left: 75%;
+            transform: translate(-50%, -50%);
+        }
+
+
+
+        .circle:nth-child(1){
+            background: linear-gradient(90deg, transparent 50%, red 50%, #262525 50%);
+            width: 28rem;
+        }
+
+
+
+        .circle:nth-child(2){
+            width: 22rem;
+            background-image: url("image/profile.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 2rem hsl(130, 93%, 40%), inset 0 0 1rem #fff, 0 0 2rem #3877ff, inset 0 0 2rem #3877ff;
+            border: 1rem solid white;
+        }
+
+
+
+
+                .icons .fa-brands:hover{
+                    cursor: pointer;
+            background: linear-gradient(#fff, #3877ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+                }
+        .content{
+            margin-left: 4rem;
+            color: white;
+        }
+        .content h2{
+            font-size: 1.5rem;
+        }
+        .content h1{
+            /* color: 4rem; */
+            /* color: #5db9ee; */
+            color: yellowgreen;
+        }
+        .icons{
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .icons .fa-brands{
+            color: #bbb;
+            padding-left: 3rem;
+            font-size: 1.7rem;
+        }
+
+.left-container,.right-container{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .portfolio-container{
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+        }
+        .navlist{
+            display: flex;
+            gap: 3rem;
+            height: 15vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+        }
+        .navlist li{
+            list-style: none;
+
+        }
+        .navlist li a{
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color: #fff;
+            position: relative;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .left-container{
+            background: #262525;
+            width: 75%;
+
+        }
+        .right-container{
+            background: linear-gradient(-45deg, #3877ff, #262525 65%);
+            width: 25%;
+        }
+    </style>
+{% endblock  %}
+    
+    
+<!-- <div class="container px-0">
+    <div class="icons">
+    <div class="card border-0 h-75" style="background-color: #223;">
+        <div class="row g-0">
+            <div class="col-md-6">
+                <img src="{% static 'images/nishant.jpg' %}" alt="" class="image-fluid mt-2 shadow-lg" style="height: 30rem; border-radius: 50%;"/>
+                    </div>
+                </div>
+                    <div class=" container col-md-6 d-flex justify-content-center align-items-center flex-column text-white mb-5">                                   
+                        <h3 style="padding-right: 100px; margin-bottom: 5%; color: yellow;">Hello,Welcome</h3>
+                        <h2 class="text-white mb-3" style="margin-right: 100px;" >I'm Nishant Verma</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium quod accusamus, nulla dicta dolore eveniet autem eligendi saepe ad, odio ea nam natus, illum debitis impedit. Ipsum ipsam adipisci a.</p>
+                        <div class="container">
+                            <div class="icons" style="font-size:2rem;">
+                                <i class='bx bxl-instagram'></i>
+                                <i class='bx bxl-facebook'></i>
+                                <i class='bx bxl-twitter'></i>
+                                <i class='bx bxl-whatsapp'></i>
+                                <i class='bx bxs-user'></i>
+
+                            </div> 
+                            <div>
+                                <div class="button">
+                                    <button class=" btn btn-outline-primary"> Hire me</button>
+                                    <button class=" btn btn-outline-warning"> View project</button>
+                                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <style>
+        body{
+            background-color:#223;
+        }
+        .icons{
+
+
+        }
+
+    </style>
+
+    
+    -->
